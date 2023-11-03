@@ -53,6 +53,8 @@ const SectionDescription = styled.h2`
   }
 `;
 
+const TotalContainer = styled.div``;
+
 interface product {
   id: number;
   title: string;
@@ -135,6 +137,9 @@ const Products = () => {
         handleCategoryFiltering={handleCategoryFiltering}
         handlePriceFiltering={handlePriceFiltering}
       />
+      {currentProducts && (
+        <TotalContainer>Product : {currentProducts?.length}</TotalContainer>
+      )}
       <ProductContainer>
         {currentProducts.map((product) => (
           <SingleProduct key={product.id} product={product} />
